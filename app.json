@@ -4,7 +4,7 @@
     "slug": "nawafrica-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/theApp.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -27,6 +27,22 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "sentry-expo"
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "#captivator",
+            "project": "nawafrica-mobile-app",
+            "authToken": "89e1b86bbf19422cb8403dca9583e0717156e02b1ff04fd78214d235f5d6b5d6"
+          }
+        }
+      ]
+    },
+    "description": ""
   }
 }
